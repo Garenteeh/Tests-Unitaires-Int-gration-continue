@@ -27,12 +27,6 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Verify Java Version
-      run: java -version
-    - name: Install Maven
-      uses: actions/setup-maven@v3
-      with:
-        maven-version: '3.9.5'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
         
