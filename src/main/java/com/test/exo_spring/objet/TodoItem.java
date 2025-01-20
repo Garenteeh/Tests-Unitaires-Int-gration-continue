@@ -1,13 +1,20 @@
 package com.test.exo_spring.objet;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 
+@Entity
 public class TodoItem {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String description;
     private boolean done;
-
     private LocalDateTime creationDate;
 
     public TodoItem(String title, String description, LocalDateTime creationDate) {
@@ -51,5 +58,4 @@ public class TodoItem {
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
-
 }
